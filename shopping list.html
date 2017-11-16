@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shopping list</title>
+<style type = "text/css">
+    body{
+        color : white;
+        background-color : black;
+    }
+    #purchases{
+        border : 1px solid white;
+        background-color : #333;
+        color : #ccc;
+        padding : 1em;
+        transition:.5s;
+    }
+    #purchases:hover{
+        background-color:#ddd;
+        color:#333;
+    }
+</style>
+</head>
+<body>
+    <h1>what to buy</h1>
+    <p title="a gentle reminder">Don't forget to buy this stuff.</p>
+    <p title="a gentle reminder">Don't forget to buy this stuff.</p>
+    <ul id="purchases" >
+        <li>A tin of beans</li>
+        <li class="sale">Cheese</li>
+        <li class="sale important">Milk</li>
+    </ul>
+
+    <script>
+        // alert(typeof document.getElementsByName("li").length);
+        var shopping = document.getElementById("purchases");
+        var items = shopping.getElementsByTagName("*");
+        alert(items.length);
+        var paras = document.getElementsByTagName("p");
+        for(var i = 0;i < paras.length;i++){
+            alert(paras[i].getAttribute("title"));
+            paras[i].setAttribute("title","修改了title");
+        }
+    </script>
+</body>
+
+</html>

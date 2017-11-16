@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求回归数</title>
+</head>
+<body>
+
+
+</body>
+<script>
+/*
+* 判断一个数是否为回归数
+* 例:
+*    total(121)      //true
+*    total(1234)     //false
+* */
+    function total(target) {
+        var temp = target;
+        var reversedNum = 0;
+        var degreeNum = 0;
+        while(temp !== 0) {
+            degreeNum = temp % 10;
+            reversedNum *= 10;
+            reversedNum += degreeNum;
+            temp = Math.floor(temp / 10);
+        }
+        if(target === reversedNum){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+</html>
