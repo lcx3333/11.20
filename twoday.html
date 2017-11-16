@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="layout.css" media="screen" />
+</head>
+<body>
+<h1>Snaphots</h1>
+<ul>
+    <li>
+        <a href="images/fireworks.jpg" onclick="showpic(this);return false;" title="A fireworks display">Fireworks</a>
+    </li>
+    <li>
+        <a href="images/cofffee.jpg" onclick="showpic(this);return false;" title="A cup of black coffee">Coffee</a>
+    </li>
+    <li>
+        <a href="images/rose.jpg" onclick="showpic(this);return false;" title="A red,red rose">Rose</a>
+    </li>
+    <li>
+        <a href="images/bigben.jpg" onclick="showpic(this);return false;" title="The famous clock">Big Ben</a>
+    </li>
+    <img id="placeholder" src="images/planceholder.gif" alt="my image gallery">
+</ul>
+<p id="description">Choose an image.</p>
+<script>
+    function showpic(whichpic) {
+        var source = whichpic.getAttribute("href");
+        var placeholder = document.getElementById("placeholder");
+        placeholder.setAttribute("src",source);
+        var text = whichpic.getAttribute("title");
+        var description = document.getElementById("description");
+        description.firstChild.nodeValue = text;
+        //console.log(description.childNodes[0].nodeValue);
+    }
+    function countBodyChildren() {
+        var body_element = document.getElementsByTagName("body")[0];
+        console.log(body_element.childNodes);
+        console.log(body_element.childNodes.length);
+    }
+    window.onload = countBodyChildren;
+</script>
+</body>
+</html>
