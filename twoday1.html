@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my first web</title>
+    <link rel="stylesheet" href="td.css" media="screen" />
+</head>
+<body>
+<div>
+    <img id="pic" src="images/pic.png" alt="无法加载此图片">
+    <h1>无法访问此网站</h1>
+    <p class="confuse">localhost拒绝了我们的连接请求</p>
+    <p class="try">请试试以下的办法：</p>
+    <ul>
+        <li>检查网络连接</li>
+        <li>
+            <a href="http://localhost:63342/webstormworkspace/twoday.html?_ijt=99v1h2u9ooofffj5mitaj93qil" onclick="showtxt(this);return false;">检查代理服务器和防火墙</a>
+        </li>
+    </ul>
+    <p class="error">ERR_CONNECTION_REFUSED</p>
+    <button id="reload" >重新加载</button>
+    <button id="detail">详细信息</button>
+</div>
+
+<script>
+    function showtxt(whichtxt) {
+        var source = whichtxt.getAttribute("href");
+        var placeholder = document.getElementById("placeholder");
+        placeholder.setAttribute("src", source);
+    }
+</script>
+</body>
+</html>
